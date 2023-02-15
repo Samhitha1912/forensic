@@ -1,8 +1,9 @@
 const express = require('express'),
     //   Employee = require('./dbFiles/employee'),
-        Case = require('./dbFiles/Case'),
+      Case = require('./dbFiles/Case'),
       dbOperation = require('./dbFiles/dbOperation'),
       cors    =require('cors');
+      //getCase    = require('./dbFiles/dbOperation/getCase');
 
 const API_PORT = process.env.PORT || 5000;
 const app=express(); //start server
@@ -11,23 +12,23 @@ app.use(express.urlencoded());
 
 app.use(cors());
 
-app.post('/api', async(req,res)=> {
-    console.log('called');
-    const result = await dbOperation.getEmployees(req.body.name);
-    res.send(result);
-})
+// app.get('/api', async(req,res)=> {
+//     console.log('called');
+//     const result = await dbOperation.getCase(req.body.CaseID);
+//     res.send(result);
+// })
 
-app.post('/quit', function(req,res){
+app.get('/quit', function(req,res){
     console.log('called quit');
-    res.send({result: 'bye'});
+    res.send(dbOperation.getCase);
 })
 
-let Pam = new Employee("pam",56,"F");
-// console.log(Pam);
- dbOperation.createEmployees(Pam);
+// let C1 = new Case("4C","Delhi","3D");
+// console.log(C1);
+ //dbOperation.createEmployees(C1);
 
-dbOperation.getEmployees().then(res =>{
-    console.log(res.recordset);
+dbOperation.getCase().then(res =>{
+    console.log(res);
 })
 
 app.listen(API_PORT, ()=>console.log(`Listening on port ${API_PORT}`));

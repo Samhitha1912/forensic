@@ -1,10 +1,10 @@
 const config = require('./dbConfig'),
       sql    = require('mssql');
 
-const getCase = async(caseid)=>{
+const getCase = async()=>{
   try{
     let pool=await sql.connect(config);
-    let casedata = pool.request().query(`SELECT * from CRIMES WHERE CaseID = '${caseid}'`)
+    let casedata = pool.request().query("SELECT * from CRIMES")
     console.log(casedata);
     return casedata;
   }  
@@ -12,6 +12,7 @@ const getCase = async(caseid)=>{
     console.log(error);
   }
 }
+//WHERE DetectiveID = '${DetectiveID}
 
 // const createEmployees = async(Employee)=>{
 //   try{

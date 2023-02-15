@@ -13,6 +13,8 @@ import {
 } from '@tabler/icons';
 import { MantineLogo } from '@mantine/ds';
 
+//const fetchData = require('./pages/App.js');
+
 const useStyles = createStyles((theme, _params, getRef) => {
   const icon = getRef('icon');
   return {
@@ -89,6 +91,7 @@ function NavbarSimple() {
       onClick={(event) => {
         event.preventDefault();
         setActive(item.label);
+        //fetchData();
       }}
     >
       <item.icon className={classes.linkIcon} stroke={1.5} />
@@ -101,7 +104,7 @@ function NavbarSimple() {
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
           {/* <MantineLogo size={28} />*/}
-          <h2 sx={{fontWeight:1000}}>Forensic Data Management System<span>🕵️‍♂️</span></h2>
+          <h2 sx={{fontWeight:1000}}>Forensic Data Management System<span><center>🕵️‍♂️</center></span></h2>
           
           {/* <Code sx={{ fontWeight: 700 }}>v3.1.2</Code> */}
         </Group>
