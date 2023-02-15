@@ -1,7 +1,7 @@
 const config ={
     user:'dbms',
     password: 'dbms',
-    server: 'LAPTOP-PMD13D6S',
+    server: 'LAPTOP-3UD1TBRM',
     database: 'FORENSIC',
     options: {
         trustServerCertificate: true,
@@ -11,7 +11,7 @@ const config ={
         encrypt: false
        
     },
-    port:1433 
+    port:1434 
 }
 
 
